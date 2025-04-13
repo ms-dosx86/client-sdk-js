@@ -193,6 +193,10 @@ export default class PCTransport extends EventEmitter {
             return true;
           });
         }
+
+        if (media.type === 'video') {
+          media.framerate = 60;
+        }
       });
       mungedSDP = write(sdpParsed);
     }
@@ -330,6 +334,10 @@ export default class PCTransport extends EventEmitter {
       ensureIPAddrMatchVersion(media);
       if (media.type === 'audio') {
         ensureAudioNackAndStereo(media, this.remoteStereoMids, this.remoteNackMids);
+      }
+
+      if (media.type === 'video') {
+        media.framerate = 60;
       }
     });
     await this.setMungedSDP(answer, write(sdpParsed));
