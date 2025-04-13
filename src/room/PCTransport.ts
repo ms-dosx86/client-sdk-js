@@ -272,6 +272,7 @@ export default class PCTransport extends EventEmitter {
       if (media.type === 'audio') {
         ensureAudioNackAndStereo(media, [], []);
       } else if (media.type === 'video') {
+        media.framerate = 60;
         this.trackBitrates.some((trackbr): boolean => {
           if (!media.msid || !trackbr.cid || !media.msid.includes(trackbr.cid)) {
             return false;
@@ -458,7 +459,6 @@ export default class PCTransport extends EventEmitter {
   };
 
   private async setMungedSDP(sd: RTCSessionDescriptionInit, munged?: string, remote?: boolean) {
-    console.log('setMungedSDP', sd, munged, remote);
     if (munged) {
       const originalSdp = sd.sdp;
       sd.sdp = munged;
