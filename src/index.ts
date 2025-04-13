@@ -7,6 +7,7 @@ import Room, { ConnectionState } from './room/Room';
 import type { RoomEventCallbacks } from './room/Room';
 import LocalParticipant from './room/participant/LocalParticipant';
 import Participant, { ConnectionQuality, ParticipantKind } from './room/participant/Participant';
+import type { ParticipantEventCallbacks } from './room/participant/Participant';
 import type { ParticipantTrackPermission } from './room/participant/ParticipantTrackPermission';
 import RemoteParticipant from './room/participant/RemoteParticipant';
 import type {
@@ -130,4 +131,5 @@ export type {
   ReconnectContext,
   ReconnectPolicy,
   RoomEventCallbacks,
+  ParticipantEventCallbacks,
 };
