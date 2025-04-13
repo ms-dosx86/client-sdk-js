@@ -71,6 +71,7 @@ export type {
   TranscriptionSegment,
   ChatMessage,
   SendTextOptions,
+  TextStreamInfo,
 } from './room/types';
 export * from './version';
 export {
