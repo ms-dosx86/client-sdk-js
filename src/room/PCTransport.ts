@@ -458,6 +458,7 @@ export default class PCTransport extends EventEmitter {
   };
 
   private async setMungedSDP(sd: RTCSessionDescriptionInit, munged?: string, remote?: boolean) {
+    console.log('setMungedSDP', sd, munged, remote);
     if (munged) {
       const originalSdp = sd.sdp;
       sd.sdp = munged;
