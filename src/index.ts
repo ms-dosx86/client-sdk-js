@@ -27,6 +27,7 @@ import RemoteTrackPublication from './room/track/RemoteTrackPublication';
 import type { ElementInfo } from './room/track/RemoteVideoTrack';
 import RemoteVideoTrack from './room/track/RemoteVideoTrack';
 import { TrackPublication } from './room/track/TrackPublication';
+import type { PublicationEventCallbacks } from './room/track/TrackPublication';
 import type { LiveKitReactNativeInfo } from './room/types';
 import type { AudioAnalyserOptions } from './room/utils';
 import {
@@ -133,4 +134,5 @@ export type {
   ReconnectPolicy,
   RoomEventCallbacks,
   ParticipantEventCallbacks,
+  PublicationEventCallbacks,
 };
